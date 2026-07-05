@@ -1,3 +1,525 @@
-Also one more thing, the logic of comma separated values, those that should be changed because that belongs to one of the columns. So can we do one thing? We have extracted raw text and using words coordinate, can we extract which parsing value of which column needs to be presented in, needs to be inserted into which column? Because that would be the better way
+# PDF Financial Ledger Parser - Complete Functional & Technical Requirements
 
-https://chatgpt.com/share/6a4a2d5f-490c-83ee-8776-45e7cffff330
+## Objective
+
+Develop a Python script to convert an Italian Financial Ledger PDF into an Excel file.
+
+The PDF is **text-based (not scanned)** and should be parsed using **pdfplumber**.
+
+Initially, the parser should process **only the first page** for testing. Once validated, it can be extended to process all pages.
+
+The final Excel should contain exactly these columns:
+
+* DATA
+* N.RIF.
+* N.Prot.
+* DESCRIZIONE
+* CONTO
+* DARE
+* AVERE
+
+Each transaction in the PDF should become exactly **one row** in the Excel.
+
+---
+
+# Libraries
+
+Use:
+
+* pdfplumber
+* pandas
+* re
+
+Avoid using openpyxl during development. Build a pandas DataFrame first and then export it to Excel.
+
+---
+
+# Overall Flow
+
+PDF
+
+↓
+
+extract_text()
+
+↓
+
+Locate Transaction Header
+
+↓
+
+Start Reading Transactions
+
+↓
+
+Skip Summary Rows
+
+↓
+
+Read Transaction Rows
+
+↓
+
+Use extract_words() for coordinates
+
+↓
+
+Parse every transaction
+
+↓
+
+Append parsed record to a list
+
+↓
+
+Create pandas DataFrame
+
+↓
+
+Export DataFrame to Excel
+
+---
+
+# Header Detection
+
+Use:
+
+```python
+page.extract_text()
+```
+
+Normalize every line using:
+
+```python
+re.sub(r"[^A-Z0-9]", "", text.upper())
+```
+
+Expected normalized header:
+
+```
+DATANRIFNPROTDESCRIZIONECONTODAREAVERE
+```
+
+Original header:
+
+```
+DATA
+N.RIF.
+N.Prot.
+DESCRIZIONE
+CONTO
+D A R E
+A V E R E
+```
+
+Once this header is found, begin reading transactions below it.
+
+---
+
+# Rows to Skip
+
+Never process rows beginning with:
+
+```
+R I P O R T I
+```
+
+or
+
+```
+T O T A L I   P R O G R E S S I V I
+```
+
+These are summary rows and must never appear in Excel.
+
+---
+
+# Development Scope
+
+For now:
+
+* Read only Page 1.
+* Parse only Page 1.
+* Export only Page 1.
+
+---
+
+# Data Structure
+
+Store every parsed transaction as a dictionary.
+
+Example:
+
+```python
+{
+    "DATA": "",
+    "N.RIF.": "",
+    "N.Prot.": "",
+    "DESCRIZIONE": "",
+    "CONTO": "",
+    "DARE": "",
+    "AVERE": ""
+}
+```
+
+Append each record:
+
+```python
+records.append(record)
+```
+
+Finally:
+
+```python
+df = pd.DataFrame(records)
+df.to_excel(output_path, index=False)
+```
+
+---
+
+# Hybrid Parsing Strategy
+
+Do **not** rely only on regex.
+
+Use a hybrid approach.
+
+## Step 1
+
+Use:
+
+```python
+extract_text()
+```
+
+to identify transaction rows.
+
+## Step 2
+
+Use:
+
+```python
+extract_words()
+```
+
+to obtain word-level coordinates.
+
+Each extracted word contains:
+
+* text
+* x0
+* x1
+* top
+
+Example:
+
+```python
+{
+    "text": "01/02/2025",
+    "x0": 41.00,
+    "x1": 86.30,
+    "top": 36.12
+}
+```
+
+---
+
+# Column Detection Using Coordinates
+
+Instead of guessing where columns begin using regex, use the X coordinates obtained from the header.
+
+Example:
+
+```
+DATA            x ≈ 40
+
+N.RIF.          x ≈ 90
+
+N.Prot.         x ≈ 130
+
+DESCRIZIONE     x ≈ 190
+
+CONTO           x ≈ 440
+
+DARE            x ≈ 700
+
+AVERE           x ≈ 780
+```
+
+Each extracted word should be assigned to a column based on its X-coordinate.
+
+Regex should only validate extracted values, not determine column boundaries.
+
+---
+
+# Regex Validation
+
+## DATA
+
+Format:
+
+```
+dd/mm/yyyy
+```
+
+Regex:
+
+```
+^\d{2}/\d{2}/\d{4}$
+```
+
+---
+
+## N.RIF.
+
+Alphabetic.
+
+Examples:
+
+```
+A
+AB
+C
+```
+
+Regex:
+
+```
+^[A-Za-z]+$
+```
+
+---
+
+## N.Prot.
+
+Numeric.
+
+Regex:
+
+```
+^\d+$
+```
+
+---
+
+## DESCRIZIONE
+
+No strict regex.
+
+Contains the descriptive transaction text.
+
+---
+
+## CONTO
+
+Account information.
+
+Typically starts with numeric account identifiers followed by account description.
+
+Example:
+
+```
+22 5 334093 DAS TYUPE MASKED MAN
+```
+
+---
+
+## DARE
+
+Numeric amount.
+
+---
+
+## AVERE
+
+Numeric amount.
+
+---
+
+# Parsing Order
+
+The parser should process every transaction from **RIGHT → LEFT**.
+
+Order:
+
+1. Amount (DARE / AVERE area)
+2. CONTO
+3. DESCRIZIONE
+4. N.Prot.
+5. N.RIF.
+6. DATA
+
+---
+
+# Amount Rule (Updated)
+
+Previous logic of splitting on the comma is **no longer valid**.
+
+Example:
+
+```
+61,00
+```
+
+should **NOT** become:
+
+```
+DARE = 61
+AVERE = 00
+```
+
+Instead:
+
+* Treat the amount as a single value.
+* Do **not** use the comma as a separator.
+* Replace the comma with `0`.
+
+Examples:
+
+```
+61,00
+→ 61.00
+
+125,50
+→ 125.50
+```
+
+The parser should determine whether the amount belongs to the DARE or AVERE column based on the ledger layout and coordinates, not by splitting on the comma.
+
+---
+
+# CONTO Rule
+
+Read from the **right**.
+
+Collect the account description words.
+
+Continue moving left to collect the numeric account identifiers immediately preceding those words.
+
+Example:
+
+```
+22 5 334093 DAS TYUPE MASKED MAN
+```
+
+Entire value becomes:
+
+```
+CONTO
+```
+
+Stop when reaching the description portion.
+
+Everything before CONTO belongs to DESCRIZIONE.
+
+---
+
+# DESCRIZIONE Rule
+
+Everything remaining after removing:
+
+* Amount
+* CONTO
+* DATA
+* N.RIF.
+* N.Prot.
+
+belongs to DESCRIZIONE.
+
+Example:
+
+```
+100567 Ts.bsst.n. 6724/8-2025 yep
+```
+
+---
+
+# DATA Rule
+
+Example:
+
+```
+01/02/2025
+```
+
+If not found:
+
+Leave blank.
+
+---
+
+# N.RIF.
+
+Alphabetic.
+
+Example:
+
+```
+A
+```
+
+If not found:
+
+Leave blank.
+
+---
+
+# N.Prot.
+
+Numeric.
+
+Example:
+
+```
+56
+```
+
+If missing:
+
+Carry forward the previous non-empty value.
+
+---
+
+# Missing Values
+
+Leave blank for:
+
+* DATA
+* N.RIF.
+* DESCRIZIONE
+* CONTO
+
+For N.Prot.:
+
+Use the previous non-empty value.
+
+---
+
+# Expected Excel Output
+
+Each transaction should produce exactly one row.
+
+Example:
+
+| DATA       | N.RIF. | N.Prot. | DESCRIZIONE                       | CONTO                            | DARE | AVERE |
+| ---------- | ------ | ------- | --------------------------------- | -------------------------------- | ---- | ----- |
+| 01/02/2025 | A      | 56      | 100567 Ts.bsst.n. 6724/8-2025 yep | 22 5 334093 DAS TYUPE MASKED MAN | 6100 |       |
+
+---
+
+# Final Goal
+
+The parser should:
+
+1. Read only the first page (for testing).
+2. Detect the transaction header.
+3. Skip RIPORTI and TOTALI PROGRESSIVI rows.
+4. Read transaction rows using `extract_text()`.
+5. Use `extract_words()` to obtain coordinates.
+6. Use header coordinates to determine which column each word belongs to.
+7. Validate extracted values using regex.
+8. Build one dictionary per transaction.
+9. Append all dictionaries to a list.
+10. Create a pandas DataFrame.
+11. Export the DataFrame to Excel.
+
+The implementation should be modular, maintainable, and easy to extend to all pages and future ledger layouts.
