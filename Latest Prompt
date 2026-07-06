@@ -1,0 +1,42 @@
+I have a Python PDF-to-Excel parser (using pdfplumber) that extracts Italian ledger transactions into these columns:
+
+DATA | N.RIF. | N.Prot. | DESCRIZIONE | CONTO | DARE | AVERE
+
+The current implementation relies heavily on x-coordinate column boundaries from the PDF header, but this causes incorrect extraction because some transactions are not perfectly aligned.
+
+The issues are:
+
+1. DATA
+- For every transaction, search the entire transaction for a value matching:
+  r"^\d{2}/\d{2}/\d{4}$"
+- If a valid date exists, populate DATA with that value.
+- If no valid date exists, leave DATA blank.
+- Do NOT extract dates that belong to DESCRIZIONE.
+
+2. N.RIF.
+- The current regex:
+  r"^[A-Za-z]$"
+  is incorrect.
+- N.RIF. should instead be a numeric value.
+- It should be identified as the numeric token immediately after DATA and before N.Prot. within the transaction.
+- Update the extraction logic accordingly.
+
+3. N.Prot.
+- Currently the parser initializes every row with the previous N.Prot., causing blank rows to inherit values incorrectly.
+- Only carry forward N.Prot. if the business rule explicitly requires it.
+- Otherwise, if the current transaction has no N.Prot., leave it blank.
+- Do not pre-populate every row with last_nprot.
+
+4. DESCRIZIONE
+- After extracting DATA, N.RIF., N.Prot., CONTO, DARE and AVERE, every remaining token should belong to DESCRIZIONE.
+- Dates or numeric values that are actually part of the description should remain in DESCRIZIONE unless they satisfy the extraction rules above.
+
+5. Parsing Strategy
+Instead of relying almost entirely on PDF x-coordinate bins, implement a transaction-aware parser:
+- Identify DARE/AVERE.
+- Identify CONTO.
+- Search the remaining tokens for DATA.
+- From the remaining tokens, identify N.RIF. and N.Prot. in sequence.
+- Everything left becomes DESCRIZIONE.
+
+The goal is to make the extraction robust even when the PDF text is slightly misaligned and not perfectly positioned under the header columns.
