@@ -1,0 +1,15 @@
+row 0:
+['Data Comp.', 'Registr. N° del', 'Descrizione Movimento', 'Documento N° del e Prot.', 'Partita', 'DARE', 'AVERE', 'SALDO']
+
+row 1:
+['29/05/2025 ***** 29/05/2025 AUMENTO DI CAPITALE COME DA ASSEMBLEA 500.000,00 500.000,00
+09/09/2025 ***** 09/09/2025 sottoscrizione aumento di capitale [PERSON_1] 250.000,00 250.000,00
+09/09/2025 ***** 09/09/2025 sottoscrizione aumento di capitale [PERSON_2] 250.000,00
+500.000,00 500.000,00',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '',
+ '']
