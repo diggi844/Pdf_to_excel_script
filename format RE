@@ -3,3 +3,15 @@ FPR 29/25 30/04/2025 2.713
 26/2025/FE/2025
 
 [page 1061] Row '30/09/2025 Rilevazione tfr su ferie 2024': no SALDO available to infer DARE vs AVERE — defaulted to DARE, please verify.
+
+Page	Data Comp.	Registr. N° del	Descrizione Movimento	Documento N° del e Prot.	Partita	DARE	AVERE	SALDO	Status
+623	17/02/2025	1938 17/02/2025	Fattura acquisto 4/01-24350 11/02/2025 607 4/01-24350/2025			0	40	-4551145.13	Pass
+
+Page	Data Comp.	Registr. N° del	Descrizione Movimento	Documento N° del e Prot.	Partita	DARE	AVERE	SALDO	Status
+160	31/01/2025	1299 31/01/2025	Fattura	acquisto 050512306T 30/01/2025 399	050512306T/2025	1.31	0	177837.77	Pass
+613	31/01/2025	1299 31/01/2025	Fattura	acquisto 050512306T 30/01/2025 399	050512306T/2025	0	18.21	-4741421	Pass
+
+
+Have seen one two rows where AVERE has values pdf but in excel the value is inserted in DARE column instead of AVERE 
+
+
