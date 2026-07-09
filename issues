@@ -17,3 +17,5 @@ python giornale_to_excel.py your_file.pdf output.xlsx --debug-pages 9,69 > debug
 
 1550	31/12/2025	21776 31/12/2025	accantonamento imposte 2025			0	0		Pass
 
+python .\giornale_to_excel.py .\new_pdf.pdf check_1550.xlsx --debug-pages 1550 *> debug_1550.txt
+
