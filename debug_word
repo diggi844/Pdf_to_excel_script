@@ -1,0 +1,604 @@
+Opened 'new_pdf.pdf' ù 1550 page(s) detected. Processing first 1550 page(s) only.
+
+--- DEBUG page 9 ---
+    header candidate at top=108: single-line match failed (column 'Data Comp.': expected header word 'Data' not found within 3 tokens after position 0 (saw: ['Descrizione', 'Movimento', 'Documento']))
+  Zones found: True
+    Data Comp.: [0.0, 79.3)
+    Registr. N░ del: [79.3, 184.9)
+    Descrizione Movimento: [184.9, 349.3)
+    Documento N░ del e Prot.: [349.3, 504.9)
+    Partita: [504.9, 586.8)
+    DARE: [586.8, 662.5)
+    AVERE: [662.5, 736.6)
+    SALDO: [736.6, 100000.0)
+    Zone boundaries for reference:
+      Data Comp.: [0.0, 79.3)
+      Registr. N░ del: [79.3, 184.9)
+      Descrizione Movimento: [184.9, 349.3)
+      Documento N░ del e Prot.: [349.3, 504.9)
+      Partita: [504.9, 586.8)
+      DARE: [586.8, 662.5)
+      AVERE: [662.5, 736.6)
+      SALDO: [736.6, 100000.0)
+    -- line at top=132 --
+      word='01/01/2025'         x0=35.5 x1=69.3 center=52.4  -> Data Comp.
+      word='9.460'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='01/01/2025'         x0=119.5 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Riporto'            x0=161.9 x1=182.9 center=172.4  -> Registr. N░ del
+      word='Saldo'              x0=184.9 x1=200.8 center=192.9  -> Descrizione Movimento
+      word='Apertura'           x0=202.9 x1=228.1 center=215.5  -> Descrizione Movimento
+      word='Esercizio'          x0=230.1 x1=255.2 center=242.7  -> Descrizione Movimento
+      word='1.889.670,05'       x0=622.2 x1=660.6 center=641.4  -> DARE
+      word='1.889.670,05'       x0=766.2 x1=804.6 center=785.4  -> SALDO
+    -- line at top=147 --
+      word='30/04/2025'         x0=35.5 x1=69.3 center=52.4  -> Data Comp.
+      word='6.233'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='30/04/2025'         x0=119.5 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.9 x1=182.7 center=172.3  -> Registr. N░ del
+      word='acquisto'           x0=184.8 x1=208.8 center=196.8  -> Descrizione Movimento
+      word='FPR'                x0=386.3 x1=397.5 center=391.9  -> Documento N░ del e Prot.
+      word='17/25'              x0=399.6 x1=416.5 center=408.0  -> Documento N░ del e Prot.
+      word='08/04/2025'         x0=434.5 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='2.066'              x0=484.3 x1=500.7 center=492.5  -> Documento N░ del e Prot.
+      word='FPR'                x0=524.7 x1=535.9 center=530.3  -> Partita
+      word='17/25/2025'         x0=538.0 x1=571.8 center=554.9  -> Partita
+      word='27.480,00'          x0=631.4 x1=660.6 center=646.0  -> DARE
+      word='1.917.150,05'       x0=766.2 x1=804.6 center=785.4  -> SALDO
+    -- line at top=159 --
+      word='22/07/2025'         x0=35.5 x1=69.3 center=52.4  -> Data Comp.
+      word='11.837'             x0=84.9 x1=104.9 center=94.9  -> Registr. N░ del
+      word='22/07/2025'         x0=119.5 x1=153.3 center=136.4  -> Registr. N░ del
+      word='storno'             x0=161.9 x1=180.2 center=171.0  -> Registr. N░ del
+      word='Box'                x0=182.3 x1=193.0 center=187.7  -> Descrizione Movimento
+      word='per'                x0=195.1 x1=204.6 center=199.8  -> Descrizione Movimento
+      word='vendita'            x0=206.7 x1=227.9 center=217.3  -> Descrizione Movimento
+      word='ft.'                x0=230.0 x1=236.3 center=233.1  -> Descrizione Movimento
+      word='n.'                 x0=238.4 x1=244.0 center=241.2  -> Descrizione Movimento
+      word='687'                x0=246.1 x1=256.9 center=251.5  -> Descrizione Movimento
+      word='/2025'              x0=259.0 x1=275.9 center=267.5  -> Descrizione Movimento
+      word='6.201,60'           x0=708.5 x1=734.1 center=721.3  -> AVERE
+      word='1.910.948,45'       x0=766.2 x1=804.6 center=785.4  -> SALDO
+    -- line at top=174 --
+      word='22/07/2025'         x0=35.5 x1=69.3 center=52.4  -> Data Comp.
+      word='11.837'             x0=84.9 x1=104.9 center=94.9  -> Registr. N░ del
+      word='22/07/2025'         x0=119.5 x1=153.3 center=136.4  -> Registr. N░ del
+      word='storno'             x0=161.9 x1=180.2 center=171.0  -> Registr. N░ del
+      word='Box'                x0=182.3 x1=193.0 center=187.7  -> Descrizione Movimento
+      word='per'                x0=195.1 x1=204.6 center=199.8  -> Descrizione Movimento
+      word='vendita'            x0=206.7 x1=227.9 center=217.3  -> Descrizione Movimento
+      word='ft.'                x0=230.0 x1=236.3 center=233.1  -> Descrizione Movimento
+      word='n.'                 x0=238.4 x1=244.0 center=241.2  -> Descrizione Movimento
+      word='687'                x0=246.1 x1=256.9 center=251.5  -> Descrizione Movimento
+      word='/2025'              x0=259.0 x1=275.9 center=267.5  -> Descrizione Movimento
+      word='quota'              x0=278.0 x1=294.6 center=286.3  -> Descrizione Movimento
+      word='12.072,00'          x0=704.9 x1=734.1 center=719.5  -> AVERE
+      word='1.898.876,45'       x0=766.2 x1=804.6 center=785.4  -> SALDO
+    -- line at top=183 --
+      word='manutenzioni'       x0=161.9 x1=200.8 center=181.3  -> Registr. N░ del
+    -- line at top=195 --
+      word='10/09/2025'         x0=35.5 x1=69.3 center=52.4  -> Data Comp.
+      word='13.670'             x0=84.9 x1=104.9 center=94.9  -> Registr. N░ del
+      word='10/09/2025'         x0=119.5 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.9 x1=182.7 center=172.3  -> Registr. N░ del
+      word='acquisto'           x0=184.8 x1=208.8 center=196.8  -> Descrizione Movimento
+      word='27/001'             x0=394.3 x1=414.8 center=404.5  -> Documento N░ del e Prot.
+      word='08/09/2025'         x0=434.5 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='4.586'              x0=484.3 x1=500.7 center=492.5  -> Documento N░ del e Prot.
+      word='27/001/2025'        x0=532.7 x1=570.1 center=551.4  -> Partita
+      word='7.500,00'           x0=635.0 x1=660.6 center=647.8  -> DARE
+      word='1.906.376,45'       x0=766.2 x1=804.6 center=785.4  -> SALDO
+    -- line at top=210 --
+      word='1.924.650,05'       x0=616.6 x1=660.7 center=638.7  -> DARE
+      word='18.273,60'          x0=700.6 x1=734.1 center=717.4  -> AVERE
+      word='1.906.376,45'       x0=760.6 x1=804.7 center=782.7  -> SALDO
+  Raw zone-binned rows on this page (7):
+    {'Data Comp.': '01/01/2025', 'Registr. N░ del': '9.460 01/01/2025 Riporto', 'Descrizione Movimento': 'Saldo Apertura Esercizio', 'Documento N░ del e Prot.': '', 'Partita': '', 'DARE': '1.889.670,05', 'AVERE': '', 'SALDO': '1.889.670,05', '_page': 9}
+    {'Data Comp.': '30/04/2025', 'Registr. N░ del': '6.233 30/04/2025 Fattura', 'Descrizione Movimento': 'acquisto', 'Documento N░ del e Prot.': 'FPR 17/25 08/04/2025 2.066', 'Partita': 'FPR 17/25/2025', 'DARE': '27.480,00', 'AVERE': '', 'SALDO': '1.917.150,05', '_page': 9}
+    {'Data Comp.': '22/07/2025', 'Registr. N░ del': '11.837 22/07/2025 storno', 'Descrizione Movimento': 'Box per vendita ft. n. 687 /2025', 'Documento N░ del e Prot.': '', 'Partita': '', 'DARE': '', 'AVERE': '6.201,60', 'SALDO': '1.910.948,45', '_page': 9}
+    {'Data Comp.': '22/07/2025', 'Registr. N░ del': '11.837 22/07/2025 storno', 'Descrizione Movimento': 'Box per vendita ft. n. 687 /2025 quota', 'Documento N░ del e Prot.': '', 'Partita': '', 'DARE': '', 'AVERE': '12.072,00', 'SALDO': '1.898.876,45', '_page': 9}
+    {'Data Comp.': '', 'Registr. N░ del': 'manutenzioni', 'Descrizione Movimento': '', 'Documento N░ del e Prot.': '', 'Partita': '', 'DARE': '', 'AVERE': '', 'SALDO': '', '_page': 9}
+    {'Data Comp.': '10/09/2025', 'Registr. N░ del': '13.670 10/09/2025 Fattura', 'Descrizione Movimento': 'acquisto', 'Documento N░ del e Prot.': '27/001 08/09/2025 4.586', 'Partita': '27/001/2025', 'DARE': '7.500,00', 'AVERE': '', 'SALDO': '1.906.376,45', '_page': 9}
+    {'Data Comp.': '', 'Registr. N░ del': '', 'Descrizione Movimento': '', 'Documento N░ del e Prot.': '', 'Partita': '', 'DARE': '1.924.650,05', 'AVERE': '18.273,60', 'SALDO': '1.906.376,45', '_page': 9}
+Processing page 50/1550...
+
+--- DEBUG page 69 ---
+    header candidate at top=108: single-line match failed (column 'Data Comp.': expected header word 'Data' not found within 3 tokens after position 0 (saw: ['Descrizione', 'Movimento', 'Documento']))
+  Zones found: True
+    Data Comp.: [0.0, 79.3)
+    Registr. N░ del: [79.3, 184.9)
+    Descrizione Movimento: [184.9, 349.3)
+    Documento N░ del e Prot.: [349.3, 504.9)
+    Partita: [504.9, 586.8)
+    DARE: [586.8, 662.5)
+    AVERE: [662.5, 736.6)
+    SALDO: [736.6, 100000.0)
+    Zone boundaries for reference:
+      Data Comp.: [0.0, 79.3)
+      Registr. N░ del: [79.3, 184.9)
+      Descrizione Movimento: [184.9, 349.3)
+      Documento N░ del e Prot.: [349.3, 504.9)
+      Partita: [504.9, 586.8)
+      DARE: [586.8, 662.5)
+      AVERE: [662.5, 736.6)
+      SALDO: [736.6, 100000.0)
+    -- line at top=132 --
+      word='30/05/2025'         x0=35.5 x1=69.3 center=52.4  -> Data Comp.
+      word='7.823'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='30/05/2025'         x0=119.5 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Incasso'            x0=161.9 x1=184.0 center=172.9  -> Registr. N░ del
+      word='fattura'            x0=186.0 x1=205.5 center=195.8  -> Descrizione Movimento
+      word='MPS'                x0=207.6 x1=220.0 center=213.8  -> Descrizione Movimento
+      word='67.604,61'          x0=704.9 x1=734.1 center=719.5  -> AVERE
+      word='39.537.452,31'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=147 --
+      word='30/05/2025'         x0=35.5 x1=69.3 center=52.4  -> Data Comp.
+      word='7.848'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='30/05/2025'         x0=119.5 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Cliente'            x0=161.9 x1=181.7 center=171.8  -> Registr. N░ del
+      word='648.024,57'         x0=701.3 x1=734.1 center=717.7  -> AVERE
+      word='38.889.427,74'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=159 --
+      word='30/05/2025'         x0=35.5 x1=69.3 center=52.4  -> Data Comp.
+      word='7.857'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='30/05/2025'         x0=119.5 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Incasso'            x0=161.9 x1=184.0 center=172.9  -> Registr. N░ del
+      word='fatture'            x0=186.0 x1=205.5 center=195.8  -> Descrizione Movimento
+      word='UNICREDIT'          x0=207.6 x1=241.4 center=224.5  -> Descrizione Movimento
+      word='FACTORING'          x0=243.4 x1=278.7 center=261.1  -> Descrizione Movimento
+      word='28.200,00'          x0=704.9 x1=734.1 center=719.5  -> AVERE
+      word='38.861.227,74'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=174 --
+      word='30/04/2025'         x0=35.5 x1=69.3 center=52.4  -> Data Comp.
+      word='8.362'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.5 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.9 x1=182.7 center=172.3  -> Registr. N░ del
+      word='di'                 x0=184.8 x1=189.9 center=187.3  -> Descrizione Movimento
+      word='Vendita'            x0=192.0 x1=213.9 center=202.9  -> Descrizione Movimento
+      word='in'                 x0=216.0 x1=221.2 center=218.6  -> Descrizione Movimento
+      word='Reverse'            x0=223.2 x1=246.3 center=234.8  -> Descrizione Movimento
+      word='Charge'             x0=248.4 x1=269.0 center=258.7  -> Descrizione Movimento
+      word='Automatica'         x0=271.1 x1=303.8 center=287.4  -> Descrizione Movimento
+      word='2025'               x0=384.7 x1=399.1 center=391.9  -> Documento N░ del e Prot.
+      word='482'                x0=405.3 x1=416.1 center=410.7  -> Documento N░ del e Prot.
+      word='28/04/2025'         x0=434.5 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='28'                 x0=488.9 x1=496.1 center=492.5  -> Documento N░ del e Prot.
+      word='2025'               x0=523.1 x1=537.5 center=530.3  -> Partita
+      word='482/2025'           x0=543.7 x1=571.5 center=557.6  -> Partita
+      word='61,16'              x0=644.2 x1=660.6 center=652.4  -> DARE
+      word='38.861.288,90'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=189 --
+      word='30/04/2025'         x0=35.5 x1=69.3 center=52.4  -> Data Comp.
+      word='8.362'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.5 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.9 x1=182.7 center=172.3  -> Registr. N░ del
+      word='di'                 x0=184.8 x1=189.9 center=187.3  -> Descrizione Movimento
+      word='Vendita'            x0=192.0 x1=213.9 center=202.9  -> Descrizione Movimento
+      word='in'                 x0=216.0 x1=221.2 center=218.6  -> Descrizione Movimento
+      word='Reverse'            x0=223.2 x1=246.3 center=234.8  -> Descrizione Movimento
+      word='Charge'             x0=248.4 x1=269.0 center=258.7  -> Descrizione Movimento
+      word='Automatica'         x0=271.1 x1=303.8 center=287.4  -> Descrizione Movimento
+      word='2025'               x0=384.7 x1=399.1 center=391.9  -> Documento N░ del e Prot.
+      word='482'                x0=405.3 x1=416.1 center=410.7  -> Documento N░ del e Prot.
+      word='28/04/2025'         x0=434.5 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='28'                 x0=488.9 x1=496.1 center=492.5  -> Documento N░ del e Prot.
+      word='2025'               x0=523.1 x1=537.5 center=530.3  -> Partita
+      word='482/2025'           x0=543.7 x1=571.5 center=557.6  -> Partita
+      word='50,13'              x0=717.7 x1=734.1 center=725.9  -> AVERE
+      word='38.861.238,77'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=204 --
+      word='30/04/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='8.363'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.5 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Giro'               x0=161.9 x1=173.7 center=167.8  -> Registr. N░ del
+      word='conto'              x0=175.8 x1=191.9 center=183.8  -> Registr. N░ del
+      word='fatture'            x0=194.0 x1=213.5 center=203.7  -> Descrizione Movimento
+      word='Reverse'            x0=215.5 x1=238.6 center=227.1  -> Descrizione Movimento
+      word='Charge'             x0=240.7 x1=261.3 center=251.0  -> Descrizione Movimento
+      word='11,03'              x0=717.7 x1=734.1 center=725.9  -> AVERE
+      word='38.861.227,74'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=219 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='7.680'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='494'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='494'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='494/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='426,28'             x0=640.6 x1=660.6 center=650.6  -> DARE
+      word='38.861.654,02'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=231 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='7.682'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='495'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='495'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='495/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='110.001,59'         x0=627.8 x1=660.6 center=644.2  -> DARE
+      word='38.971.655,61'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=246 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='7.684'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='496'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='496'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='496/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='2.705,47'           x0=635.0 x1=660.6 center=647.8  -> DARE
+      word='38.974.361,08'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=261 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='7.693'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='497'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='497'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='497/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='19.585,10'          x0=631.4 x1=660.6 center=646.0  -> DARE
+      word='38.993.946,18'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=276 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='7.759'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='498'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='498'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='498/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='24.560,59'          x0=631.4 x1=660.6 center=646.0  -> DARE
+      word='39.018.506,77'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=288 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='7.879'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='split'              x0=228.1 x1=239.9 center=234.0  -> Descrizione Movimento
+      word='payment'            x0=242.0 x1=267.3 center=254.7  -> Descrizione Movimento
+      word='499'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='499'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='499/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='15.321,28'          x0=631.4 x1=660.6 center=646.0  -> DARE
+      word='39.033.828,05'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=303 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='7.880'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='GIROCONTO'          x0=161.8 x1=199.1 center=180.5  -> Registr. N░ del
+      word='IVA'                x0=201.1 x1=211.5 center=206.3  -> Descrizione Movimento
+      word='2.762,85'           x0=708.5 x1=734.1 center=721.3  -> AVERE
+      word='39.031.065,20'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=318 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='7.889'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='500'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='500'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='500/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='1.614,34'           x0=635.0 x1=660.6 center=647.8  -> DARE
+      word='39.032.679,54'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=333 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='7.890'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='501'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='501'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='501/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='47.453,33'          x0=631.4 x1=660.6 center=646.0  -> DARE
+      word='39.080.132,87'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=348 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='7.994'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='502'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='502'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='502/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='446,18'             x0=640.6 x1=660.6 center=650.6  -> DARE
+      word='39.080.579,05'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=360 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='8.003'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='503'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='503'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='503/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='4.970,76'           x0=635.0 x1=660.6 center=647.8  -> DARE
+      word='39.085.549,81'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=375 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='8.011'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='split'              x0=228.1 x1=239.9 center=234.0  -> Descrizione Movimento
+      word='payment'            x0=242.0 x1=267.3 center=254.7  -> Descrizione Movimento
+      word='504'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='504'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='504/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='48.007,44'          x0=631.4 x1=660.6 center=646.0  -> DARE
+      word='39.133.557,25'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=390 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='8.012'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='GIROCONTO'          x0=161.8 x1=199.1 center=180.5  -> Registr. N░ del
+      word='IVA'                x0=201.1 x1=211.5 center=206.3  -> Descrizione Movimento
+      word='8.657,08'           x0=708.5 x1=734.1 center=721.3  -> AVERE
+      word='39.124.900,17'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=405 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='8.024'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='505'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='505'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='505/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='3.902,00'           x0=635.0 x1=660.6 center=647.8  -> DARE
+      word='39.128.802,17'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=420 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='8.026'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='506'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='506'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='506/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='9.302,00'           x0=635.0 x1=660.6 center=647.8  -> DARE
+      word='39.138.104,17'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=432 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='8.027'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='507'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='507'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='507/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='452,00'             x0=640.6 x1=660.6 center=650.6  -> DARE
+      word='39.138.556,17'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=447 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='8.028'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='508'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='508'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='508/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='752,00'             x0=640.6 x1=660.6 center=650.6  -> DARE
+      word='39.139.308,17'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=462 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='8.030'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='509'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='509'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='509/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='1.652,00'           x0=635.0 x1=660.6 center=647.8  -> DARE
+      word='39.140.960,17'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=477 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='8.048'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='510'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='510'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='510/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='190.784,25'         x0=627.8 x1=660.6 center=644.2  -> DARE
+      word='39.331.744,42'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=489 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='8.049'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='511'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='511'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='511/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='23.131,51'          x0=631.4 x1=660.6 center=646.0  -> DARE
+      word='39.354.875,93'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=504 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='8.063'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='512'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='512'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='512/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='2.824,65'           x0=635.0 x1=660.6 center=647.8  -> DARE
+      word='39.357.700,58'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=519 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='8.066'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='513'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='513'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='513/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='3.648,73'           x0=635.0 x1=660.6 center=647.8  -> DARE
+      word='39.361.349,31'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=534 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='8.067'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='514'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='514'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='514/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='28.016,79'          x0=631.4 x1=660.6 center=646.0  -> DARE
+      word='39.389.366,10'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=549 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='8.094'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='Fattura'            x0=161.8 x1=182.7 center=172.3  -> Registr. N░ del
+      word='attiva'             x0=184.8 x1=200.9 center=192.8  -> Descrizione Movimento
+      word='da'                 x0=203.0 x1=210.1 center=206.5  -> Descrizione Movimento
+      word='s.a.l.'             x0=212.1 x1=226.1 center=219.1  -> Descrizione Movimento
+      word='split'              x0=228.1 x1=239.9 center=234.0  -> Descrizione Movimento
+      word='payment'            x0=242.0 x1=267.3 center=254.7  -> Descrizione Movimento
+      word='515'                x0=402.2 x1=413.0 center=407.6  -> Documento N░ del e Prot.
+      word='31/05/2025'         x0=434.4 x1=468.3 center=451.4  -> Documento N░ del e Prot.
+      word='515'                x0=487.1 x1=497.9 center=492.5  -> Documento N░ del e Prot.
+      word='515/2025'           x0=540.7 x1=568.4 center=554.5  -> Partita
+      word='65.413,72'          x0=631.4 x1=660.6 center=646.0  -> DARE
+      word='39.454.779,82'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+    -- line at top=561 --
+      word='31/05/2025'         x0=35.4 x1=69.3 center=52.4  -> Data Comp.
+      word='8.095'              x0=86.7 x1=103.1 center=94.9  -> Registr. N░ del
+      word='31/05/2025'         x0=119.4 x1=153.3 center=136.4  -> Registr. N░ del
+      word='GIROCONTO'          x0=161.8 x1=199.1 center=180.5  -> Registr. N░ del
+      word='IVA'                x0=201.1 x1=211.5 center=206.3  -> Descrizione Movimento
+      word='11.795,92'          x0=704.9 x1=734.1 center=719.5  -> AVERE
+      word='39.442.983,90'      x0=762.6 x1=804.7 center=783.6  -> SALDO
+  Raw zone-binned rows on this page (31):
+    {'Data Comp.': '30/05/2025', 'Registr. N░ del': '7.823 30/05/2025 Incasso', 'Descrizione Movimento': 'fattura MPS', 'Documento N░ del e Prot.': '', 'Partita': '', 'DARE': '', 'AVERE': '67.604,61', 'SALDO': '39.537.452,31', '_page': 69}
+    {'Data Comp.': '30/05/2025', 'Registr. N░ del': '7.848 30/05/2025 Cliente', 'Descrizione Movimento': '', 'Documento N░ del e Prot.': '', 'Partita': '', 'DARE': '', 'AVERE': '648.024,57', 'SALDO': '38.889.427,74', '_page': 69}
+    {'Data Comp.': '30/05/2025', 'Registr. N░ del': '7.857 30/05/2025 Incasso', 'Descrizione Movimento': 'fatture UNICREDIT FACTORING', 'Documento N░ del e Prot.': '', 'Partita': '', 'DARE': '', 'AVERE': '28.200,00', 'SALDO': '38.861.227,74', '_page': 69}
+    {'Data Comp.': '30/04/2025', 'Registr. N░ del': '8.362 31/05/2025 Fattura', 'Descrizione Movimento': 'di Vendita in Reverse Charge Automatica', 'Documento N░ del e Prot.': '2025 482 28/04/2025 28', 'Partita': '2025 482/2025', 'DARE': '61,16', 'AVERE': '', 'SALDO': '38.861.288,90', '_page': 69}
+    {'Data Comp.': '30/04/2025', 'Registr. N░ del': '8.362 31/05/2025 Fattura', 'Descrizione Movimento': 'di Vendita in Reverse Charge Automatica', 'Documento N░ del e Prot.': '2025 482 28/04/2025 28', 'Partita': '2025 482/2025', 'DARE': '', 'AVERE': '50,13', 'SALDO': '38.861.238,77', '_page': 69}
+    {'Data Comp.': '30/04/2025', 'Registr. N░ del': '8.363 31/05/2025 Giro conto', 'Descrizione Movimento': 'fatture Reverse Charge', 'Documento N░ del e Prot.': '', 'Partita': '', 'DARE': '', 'AVERE': '11,03', 'SALDO': '38.861.227,74', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '7.680 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '494 31/05/2025 494', 'Partita': '494/2025', 'DARE': '426,28', 'AVERE': '', 'SALDO': '38.861.654,02', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '7.682 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '495 31/05/2025 495', 'Partita': '495/2025', 'DARE': '110.001,59', 'AVERE': '', 'SALDO': '38.971.655,61', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '7.684 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '496 31/05/2025 496', 'Partita': '496/2025', 'DARE': '2.705,47', 'AVERE': '', 'SALDO': '38.974.361,08', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '7.693 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '497 31/05/2025 497', 'Partita': '497/2025', 'DARE': '19.585,10', 'AVERE': '', 'SALDO': '38.993.946,18', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '7.759 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '498 31/05/2025 498', 'Partita': '498/2025', 'DARE': '24.560,59', 'AVERE': '', 'SALDO': '39.018.506,77', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '7.879 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l. split payment', 'Documento N░ del e Prot.': '499 31/05/2025 499', 'Partita': '499/2025', 'DARE': '15.321,28', 'AVERE': '', 'SALDO': '39.033.828,05', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '7.880 31/05/2025 GIROCONTO', 'Descrizione Movimento': 'IVA', 'Documento N░ del e Prot.': '', 'Partita': '', 'DARE': '', 'AVERE': '2.762,85', 'SALDO': '39.031.065,20', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '7.889 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '500 31/05/2025 500', 'Partita': '500/2025', 'DARE': '1.614,34', 'AVERE': '', 'SALDO': '39.032.679,54', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '7.890 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '501 31/05/2025 501', 'Partita': '501/2025', 'DARE': '47.453,33', 'AVERE': '', 'SALDO': '39.080.132,87', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '7.994 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '502 31/05/2025 502', 'Partita': '502/2025', 'DARE': '446,18', 'AVERE': '', 'SALDO': '39.080.579,05', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '8.003 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '503 31/05/2025 503', 'Partita': '503/2025', 'DARE': '4.970,76', 'AVERE': '', 'SALDO': '39.085.549,81', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '8.011 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l. split payment', 'Documento N░ del e Prot.': '504 31/05/2025 504', 'Partita': '504/2025', 'DARE': '48.007,44', 'AVERE': '', 'SALDO': '39.133.557,25', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '8.012 31/05/2025 GIROCONTO', 'Descrizione Movimento': 'IVA', 'Documento N░ del e Prot.': '', 'Partita': '', 'DARE': '', 'AVERE': '8.657,08', 'SALDO': '39.124.900,17', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '8.024 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '505 31/05/2025 505', 'Partita': '505/2025', 'DARE': '3.902,00', 'AVERE': '', 'SALDO': '39.128.802,17', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '8.026 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '506 31/05/2025 506', 'Partita': '506/2025', 'DARE': '9.302,00', 'AVERE': '', 'SALDO': '39.138.104,17', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '8.027 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '507 31/05/2025 507', 'Partita': '507/2025', 'DARE': '452,00', 'AVERE': '', 'SALDO': '39.138.556,17', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '8.028 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '508 31/05/2025 508', 'Partita': '508/2025', 'DARE': '752,00', 'AVERE': '', 'SALDO': '39.139.308,17', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '8.030 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '509 31/05/2025 509', 'Partita': '509/2025', 'DARE': '1.652,00', 'AVERE': '', 'SALDO': '39.140.960,17', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '8.048 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '510 31/05/2025 510', 'Partita': '510/2025', 'DARE': '190.784,25', 'AVERE': '', 'SALDO': '39.331.744,42', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '8.049 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '511 31/05/2025 511', 'Partita': '511/2025', 'DARE': '23.131,51', 'AVERE': '', 'SALDO': '39.354.875,93', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '8.063 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '512 31/05/2025 512', 'Partita': '512/2025', 'DARE': '2.824,65', 'AVERE': '', 'SALDO': '39.357.700,58', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '8.066 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '513 31/05/2025 513', 'Partita': '513/2025', 'DARE': '3.648,73', 'AVERE': '', 'SALDO': '39.361.349,31', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '8.067 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l.', 'Documento N░ del e Prot.': '514 31/05/2025 514', 'Partita': '514/2025', 'DARE': '28.016,79', 'AVERE': '', 'SALDO': '39.389.366,10', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '8.094 31/05/2025 Fattura', 'Descrizione Movimento': 'attiva da s.a.l. split payment', 'Documento N░ del e Prot.': '515 31/05/2025 515', 'Partita': '515/2025', 'DARE': '65.413,72', 'AVERE': '', 'SALDO': '39.454.779,82', '_page': 69}
+    {'Data Comp.': '31/05/2025', 'Registr. N░ del': '8.095 31/05/2025 GIROCONTO', 'Descrizione Movimento': 'IVA', 'Documento N░ del e Prot.': '', 'Partita': '', 'DARE': '', 'AVERE': '11.795,92', 'SALDO': '39.442.983,90', '_page': 69}
+Processing page 100/1550...
+Processing page 150/1550...
+Processing page 200/1550...
+Processing page 250/1550...
+Processing page 300/1550...
+Processing page 350/1550...
+Processing page 400/1550...
+Processing page 450/1550...
+Processing page 500/1550...
+Processing page 550/1550...
+Processing page 600/1550...
+Processing page 650/1550...
+Processing page 700/1550...
+Processing page 750/1550...
+Processing page 800/1550...
+Processing page 850/1550...
+Processing page 900/1550...
+Processing page 950/1550...
+Processing page 1000/1550...
+Processing page 1050/1550...
+Processing page 1100/1550...
+Processing page 1150/1550...
+Processing page 1200/1550...
+Processing page 1250/1550...
+Processing page 1300/1550...
+Processing page 1350/1550...
+Processing page 1400/1550...
+Processing page 1450/1550...
+Processing page 1500/1550...
+Processing page 1550/1550...
+
+Zone-based extraction used on 1547 page(s); regex/blob fallback used on 3 page(s).
+Parsing 15 fallback line(s) via regex/blob method...
+Extracted 40471 transaction row(s) total.
+
+Saved 40471 row(s) to 'cords_check.xlsx'
