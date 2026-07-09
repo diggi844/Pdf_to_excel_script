@@ -5,3 +5,7 @@ Page	Data Comp.	Registr. N° del	Descrizione Movimento	Documento N° del e Prot.
 
 
 again Fattura acquisto FPR 17/25 08/04/2025 2.066 FPR in Descrizione Movimento and Documento N° del e Prot.is blank 
+
+
+
+python giornale_to_excel.py your_file.pdf output.xlsx --debug-pages 9,69 > debug_output.txt 2>&1
