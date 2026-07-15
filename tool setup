@@ -1,0 +1,73 @@
+                                 TOOL SETUP
+                                      │
+                                      ▼
+                              User Login (SSO)
+                                      │
+                                      ▼
+                     Insert / Update USER MASTER
+                                      │
+                                      ▼
+                         Admin Creates Client
+                                      │
+                                      ▼
+                         Insert CLIENT MASTER
+                                      │
+                                      ▼
+                        Admin Creates Control
+                                      │
+                                      ▼
+                        Insert CONTROL MASTER
+                                      │
+                                      ▼
+                 Admin Configures Rule Version
+                                      │
+                                      ▼
+                 Insert CONTROL_RULE_VERSIONS
+                                      │
+                                      ▼
+                    Admin Configures AI Prompt
+                                      │
+                                      ▼
+                        Insert PROMPT_MASTER
+                                      │
+                                      ▼
+              Admin Configures Mapping Template
+                                      │
+                                      ▼
+                    Insert MAPPING_TEMPLATES
+                                      │
+                                      ▼
+              Admin Uploads Sample Evidence Files
+                                      │
+                                      ▼
+                      Insert SAMPLE_ITEMS
+                                      │
+                                      ▼
+           Engagement Leader Creates Engagement
+                                      │
+                                      ▼
+                    Insert ENGAGEMENTS
+                                      │
+                                      ▼
+            Engagement Leader Assigns Team
+                                      │
+                                      ▼
+                 Insert ENGAGEMENT_STAFFING
+                                      │
+                                      ▼
+        Engagement Leader Enables Required Controls
+                                      │
+                                      ▼
+           Insert ENGAGEMENT_CONTROL_STATE
+                                      │
+                                      ▼
+     (Optional) Configure Client-specific Deviations
+                                      │
+                                      ▼
+         Insert ENGAGEMENT_CONTROL_OVERRIDES
+                                      │
+                                      ▼
+                  TOOL SETUP COMPLETE
+                                      │
+                                      ▼
+             Ready for Evidence Upload & Execution
