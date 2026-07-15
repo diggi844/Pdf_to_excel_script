@@ -1,0 +1,6 @@
+Engagement should require Manager Approval before becoming active.
+Support multiple Scope Frameworks for a single engagement (if feasible).
+Add a Domain field to the engagement creation form.
+Provide an Attachment Upload option while creating an engagement.
+Update the Engagement Management screen to reflect the above changes.
+Finalize and confirm the final engagement status/workflow (e.g., Draft → Pending Approval → Approved → Active).
