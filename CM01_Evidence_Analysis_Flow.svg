@@ -1,0 +1,94 @@
+<svg width="900" height="1050" viewBox="0 0 900 1050" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <rect x="0" y="0" width="900" height="1050" fill="#FFFFFF"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#5F5E5A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="#1A1A1A">CM-01 Evidence Analysis Flow — with Confidence Gate</text>
+  <text x="450" y="54" text-anchor="middle" font-size="12" fill="#666660">Single sample (one transport), from evidence upload to saved result</text>
+
+  <!-- Box A: Evidence uploaded -->
+  <rect x="250" y="70" width="400" height="60" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+  <text x="450" y="94" text-anchor="middle" font-size="14" font-weight="bold" fill="#2C2C2A">Evidence uploaded</text>
+  <text x="450" y="114" text-anchor="middle" font-size="12" fill="#444441">PDF, email, screenshot, ticket — this transport</text>
+
+  <!-- Box B: Prompt master -->
+  <rect x="250" y="150" width="400" height="90" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+  <text x="450" y="174" text-anchor="middle" font-size="14" font-weight="bold" fill="#2C2C2A">CM-01 prompt master (control_rule_versions)</text>
+  <text x="450" y="196" text-anchor="middle" font-size="12" fill="#444441">Required fields: requestor, authorizer, UAT</text>
+  <text x="450" y="214" text-anchor="middle" font-size="12" fill="#444441">Sequence rule + confidence rubric + threshold</text>
+
+  <line x1="450" y1="240" x2="450" y2="270" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Box C: single API request -->
+  <rect x="250" y="272" width="400" height="60" rx="8" fill="#B5D4F4" stroke="#185FA5" stroke-width="1"/>
+  <text x="450" y="296" text-anchor="middle" font-size="14" font-weight="bold" fill="#042C53">One combined API request</text>
+  <text x="450" y="316" text-anchor="middle" font-size="12" fill="#0C447C">Evidence + prompt, forced JSON schema, sent to Azure OpenAI</text>
+
+  <line x1="450" y1="332" x2="450" y2="362" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Box D: AI response -->
+  <rect x="230" y="364" width="440" height="120" rx="8" fill="#B5D4F4" stroke="#185FA5" stroke-width="1"/>
+  <text x="450" y="388" text-anchor="middle" font-size="14" font-weight="bold" fill="#042C53">AI response — one JSON object</text>
+  <text x="450" y="410" text-anchor="middle" font-size="12" fill="#0C447C">1. Extracted fields: requestor, authorizer, UAT + their dates</text>
+  <text x="450" y="428" text-anchor="middle" font-size="12" fill="#0C447C">2. auto_status (pass / exception) + reason if exception</text>
+  <text x="450" y="446" text-anchor="middle" font-size="12" fill="#0C447C">3. Self-rated confidence score (0–100)</text>
+  <text x="450" y="468" text-anchor="middle" font-size="11" font-style="italic" fill="#185FA5">Confidence is the model's own estimate against your rubric —</text>
+
+  <line x1="450" y1="484" x2="450" y2="514" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Box E: Confidence gate -->
+  <rect x="250" y="516" width="400" height="60" rx="8" fill="#FAC775" stroke="#854F0B" stroke-width="1"/>
+  <text x="450" y="540" text-anchor="middle" font-size="14" font-weight="bold" fill="#412402">Confidence gate</text>
+  <text x="450" y="560" text-anchor="middle" font-size="12" fill="#633806">Backend checks confidence against control's threshold</text>
+
+  <!-- branch arrows -->
+  <path d="M 400 576 L 250 610 L 190 636" fill="none" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M 450 576 L 450 610 L 450 636" fill="none" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M 500 576 L 700 610 L 730 636" fill="none" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Three tier boxes -->
+  <rect x="40" y="638" width="260" height="90" rx="8" fill="#F7C1C1" stroke="#A32D2D" stroke-width="1"/>
+  <text x="170" y="662" text-anchor="middle" font-size="14" font-weight="bold" fill="#501313">Below 65</text>
+  <text x="170" y="682" text-anchor="middle" font-size="12" fill="#791F1F">Auto-exception</text>
+  <text x="170" y="700" text-anchor="middle" font-size="11" fill="#791F1F">Too uncertain to trust,</text>
+  <text x="170" y="716" text-anchor="middle" font-size="11" fill="#791F1F">reason recorded as-is</text>
+
+  <rect x="320" y="638" width="260" height="90" rx="8" fill="#FAC775" stroke="#854F0B" stroke-width="1"/>
+  <text x="450" y="662" text-anchor="middle" font-size="14" font-weight="bold" fill="#412402">65 to 84</text>
+  <text x="450" y="682" text-anchor="middle" font-size="12" fill="#633806">Manual review queue</text>
+  <text x="450" y="700" text-anchor="middle" font-size="11" fill="#633806">Human confirms either way,</text>
+  <text x="450" y="716" text-anchor="middle" font-size="11" fill="#633806">whatever the AI decided</text>
+
+  <rect x="600" y="638" width="260" height="90" rx="8" fill="#9FE1CB" stroke="#0F6E56" stroke-width="1"/>
+  <text x="730" y="662" text-anchor="middle" font-size="14" font-weight="bold" fill="#04342C">85 and above</text>
+  <text x="730" y="682" text-anchor="middle" font-size="12" fill="#085041">Auto-accepted</text>
+  <text x="730" y="700" text-anchor="middle" font-size="11" fill="#085041">AI's pass/exception status</text>
+  <text x="730" y="716" text-anchor="middle" font-size="11" fill="#085041">stands as final</text>
+
+  <!-- converge arrows -->
+  <path d="M 170 728 L 300 780 L 380 806" fill="none" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M 450 728 L 450 780 L 450 806" fill="none" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M 730 728 L 600 780 L 520 806" fill="none" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Box F: save ai_extractions -->
+  <rect x="250" y="808" width="400" height="80" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+  <text x="450" y="832" text-anchor="middle" font-size="14" font-weight="bold" fill="#2C2C2A">Save to ai_extractions</text>
+  <text x="450" y="852" text-anchor="middle" font-size="12" fill="#444441">Fields, confidence, model, prompt_version</text>
+  <text x="450" y="870" text-anchor="middle" font-size="11" fill="#666660">Append-only — a re-analysis adds a new row, never edits an old one</text>
+
+  <line x1="450" y1="888" x2="450" y2="918" stroke="#5F5E5A" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Box G: roll up -->
+  <rect x="250" y="920" width="400" height="80" rx="8" fill="#F1EFE8" stroke="#5F5E5A" stroke-width="1"/>
+  <text x="450" y="944" text-anchor="middle" font-size="14" font-weight="bold" fill="#2C2C2A">Roll up to sample_items.auto_status</text>
+  <text x="450" y="964" text-anchor="middle" font-size="12" fill="#444441">Only if no human disposition already exists —</text>
+  <text x="450" y="982" text-anchor="middle" font-size="12" fill="#444441">the AI can never overwrite an auditor's sign-off</text>
+
+  <!-- Footer -->
+  <text x="450" y="1030" text-anchor="middle" font-size="11" fill="#888780">Gate thresholds (85 / 65) are a calibration starting point — tune against your own evidence history</text>
+</svg>
