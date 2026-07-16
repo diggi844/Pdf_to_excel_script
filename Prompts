@@ -523,3 +523,6 @@ The parser should:
 11. Export the DataFrame to Excel.
 
 The implementation should be modular, maintainable, and easy to extend to all pages and future ledger layouts.
+
+
+4.043,78-
