@@ -1,0 +1,300 @@
+Summary for Other Agents
+
+PDF Structure
+
+Data starts from Page 2.
+Each page contains two separate matrices:
+
+Left side = ATTIVITA'
+Right side = PASSIVITA'
+Both sides must be processed independently.
+
+Required Output Columns
+
+
+
+
+
+
+
+
+
+Plain Text
+
+
+
+CODE
+ 
+
+SUB_CODE
+ 
+
+DESCRIPTION
+ 
+
+AMOUNT
+ 
+
+Show more lines
+
+
+
+Extraction Rules
+
+Detail Row Example
+
+
+
+
+
+
+
+
+
+Plain Text
+
+
+
+BB0305 000005 PROGRAMMI INFORMATICI 26.447,61
+ 
+
+Show more lines
+
+
+
+Output:
+
+
+
+
+
+
+
+
+
+Plain Text
+
+
+
+CODE = BB0305
+ 
+
+SUB_CODE = 000005
+ 
+
+DESCRIPTION = PROGRAMMI INFORMATICI
+ 
+
+AMOUNT = 26.447,61
+ 
+
+Show more lines
+
+
+
+Parent/Header Row Example
+
+
+
+
+
+
+
+
+
+Plain Text
+
+
+
+BB03 DIR. BREVETTO INDUSTRIALE
+ 
+
+Show more lines
+
+
+
+Output:
+
+
+
+
+
+
+
+
+
+Plain Text
+
+
+
+CODE = BB03
+ 
+
+SUB_CODE = ''
+ 
+
+DESCRIPTION = DIR. BREVETTO INDUSTRIALE
+ 
+
+AMOUNT = 0
+ 
+
+Show more lines
+
+
+
+Amount Handling
+
+If amount is missing:
+
+
+
+
+
+
+
+
+
+Python
+
+
+
+AMOUNT = 0
+ 
+
+Show more lines
+
+
+
+Totals Handling
+
+Do NOT insert rows like:
+
+
+
+
+
+
+
+
+
+Plain Text
+
+
+
+_____________ 26.447,61
+ 
+
+
+ 
+
+_____________ 2.160.000,00
+ 
+
+
+ 
+
+TOTALE ...
+ 
+
+TOTALI ...
+ 
+
+Show more lines
+
+
+
+These are summary rows and must be ignored.
+
+Processing Order
+
+
+
+
+
+
+
+
+
+Plain Text
+
+
+
+Page 2+
+ 
+
+
+ 
+
+1. Extract Left Matrix Rows
+ 
+
+2. Insert Left Matrix Rows
+ 
+
+3. Extract Right Matrix Rows
+ 
+
+4. Insert Right Matrix Rows
+ 
+
+5. Ignore Totals/Subtotals
+ 
+
+Show more lines
+
+
+
+Split Logic
+
+Use page midpoint:
+
+
+
+
+
+
+
+
+
+Python
+
+
+
+mid_x = page.width / 2
+ 
+
+Show more lines
+
+
+
+
+
+
+
+
+
+
+
+Python
+
+
+
+left_words  = words where x0 < mid_x
+ 
+
+right_words = words where x0 >= mid_x
+ 
+
+Show more lines
+
+
+
+Reconstruct rows separately for left and right sides before parsing into the 4-column structure.
+
+Provide your feedback on BizChat
+
+
+
+
+
