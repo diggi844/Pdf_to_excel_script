@@ -1,0 +1,48 @@
+Sure. If you want to share the PDF structure or extraction logic with other agents without exposing actual financial/account data, use the following masked version.
+Left Matrix (ATTIVITA') - Masked
+Plain TextAA       PARENT CATEGORYAA01     SUB CATEGORY LEVEL 1AA0101   SUB CATEGORY LEVEL 2AA0101   000001   ACCOUNT DESCRIPTION      XX.XXX,XXShow more lines
+Converted Output:
+Plain TextCODE      SUB_CODE   DESCRIPTION              AMOUNTAA         NULL      PARENT CATEGORY          0AA01       NULL      SUB CATEGORY LEVEL 1     0AA0101     NULL      SUB CATEGORY LEVEL 2     0AA0101     000001    ACCOUNT DESCRIPTION      XX.XXX,XXShow more lines
+
+Right Matrix (PASSIVITA') - Masked
+Plain TextBB       PARENT CATEGORYBB01     SUB CATEGORY LEVEL 1BB0101   SUB CATEGORY LEVEL 2BB0101   000001   ACCOUNT DESCRIPTION      XX.XXX.XXX,XXShow more lines
+Converted Output:
+Plain TextCODE      SUB_CODE   DESCRIPTION              AMOUNTBB         NULL      PARENT CATEGORY          0BB01       NULL      SUB CATEGORY LEVEL 1     0BB0101     NULL      SUB CATEGORY LEVEL 2     0BB0101     000001    ACCOUNT DESCRIPTION      XX.XXX.XXX,XXShow more lines
+
+Masked Extraction Summary
+PDF Structure
+Each page contains two independent sections:
+Plain Text----------------------------------------| LEFT SIDE      | RIGHT SIDE          || ASSET SECTION  | LIABILITY SECTION   |----------------------------------------Show more lines
+Processing Logic
+
+Start reading from Page 2.
+Split page into:
+
+Left Section
+Right Section
+
+
+Extract rows separately from each section.
+Output only four columns:
+
+Plain TextCODESUB_CODEDESCRIPTIONAMOUNTShow more lines
+Amount Rule
+If amount is missing:
+Plain TextAMOUNT = 0Show more lines
+Example:
+
+becomes:
+Plain TextAA01 | NULL | SUB CATEGORY LEVEL 1 | 0Show more lines
+
+Ignore Rows
+Do not insert:
+Plain Text====================____________________--------------------Show more lines
+or
+Plain TextTOTALSUBTOTALGRAND TOTALShow more lines
+or rows containing only a summarized amount such as:
+Plain TextXX.XXX,XXShow more lines
+without a corresponding code and description.
+
+Final Expected Output Structure
+Plain TextCODE      SUB_CODE      DESCRIPTION              AMOUNTAA         NULL         PARENT CATEGORY          0AA01       NULL         SUB CATEGORY LEVEL 1     0AA0101     NULL         SUB CATEGORY LEVEL 2     0AA0101     000001       ACCOUNT DESCRIPTION      XX.XXX,XXBB         NULL         PARENT CATEGORY          0BB01       NULL         SUB CATEGORY LEVEL 1     0BB0101     NULL         SUB CATEGORY LEVEL 2     0BB0101     000001       ACCOUNT DESCRIPTION      XX.XXX.XXX,XXShow more lines
+This masked version preserves the hierarchy, extraction rules, page layout, and expected output format without exposing any real account names, codes, or monetary values.Provide your feedback on BizChat
