@@ -1,0 +1,140 @@
+Build a control execution screen for "CM-04: Segregation of Developer Access Between DEV and PRD" 
+inside the existing SAP ITGC Audit Tool (GAD IT). Match the existing app's shell: top nav tabs 
+(Change Management / Access Controls / IT Operations), password-gated entry, and the "Audit Trail & 
+Accountability" pattern already used by other controls (auditor name field logged with every run, 
+per-control export button, automatic audit trail download).
+
+CONTROL OBJECTIVE
+Ensure users with developer access in the Development (DEV) environment do not also have equivalent 
+developer access in the Production (PRD) environment.
+
+CARD LAYOUT (top to bottom)
+1. Header: "CM-04: Segregation of Developer Access – DEV vs PRD"
+2. Objective text (one line, from above)
+3. Audit steps (numbered, static text):
+   1. Run SUIM (or the relevant authorization object/T-code) and generate developer access lists 
+      separately for DEV and PRD.
+   2. Upload both extracts below.
+   3. Enter the audit period (From Month / To Month).
+   4. The tool filters user types, checks active validity, and compares the two lists automatically.
+   5. Users appearing as active developers in both DEV and PRD are flagged as exceptions.
+
+4. AUDIT PERIOD PARAMETERS (required before Run is enabled)
+   - "From Month" — month/year picker (e.g. Apr 2025)
+   - "To Month" — month/year picker (e.g. Jun 2026)
+   - Helper text (info style, see colors below): "Defines the applicable audit period, including 
+     prior FY carry-forward and current FY YTD. Used to test whether each user's Valid To date 
+     falls within/after this window."
+   - Validation: To Month must be >= From Month.
+
+5. TWO FILE UPLOAD FIELDS (side by side or stacked)
+   - Upload field A: "DEV Developer Access Extract" — accepts .csv, .xlsx, .xls
+   - Upload field B: "PRD Developer Access Extract" — accepts .csv, .xlsx, .xls
+   - Each upload shows filename once selected, plus a "Mandatory Columns" info panel:
+       • BNAME / USERNAME – User ID
+       • USER TYPE – must be A (Dialog) or S (System); other types are filtered out
+       • VALID FROM – access start date
+       • VALID TO – access end date (blank = still active)
+       • Optional: LOCK STATUS, ROLE / AUTH OBJECT (developer access indicator, e.g. S_DEVELOP / SE38 / SE80)
+     Note under panel: "Column order does not matter. Ensure the dump contains these fields; 
+     auditors should preserve original SAP/client headers wherever possible."
+   - Parsing logic:
+       • .csv → parse as delimited text.
+       • .xlsx/.xls → parse the first worksheet as a table (header row + data rows); ignore 
+         additional sheets.
+       • Normalize both into the same internal row structure before running validation logic — 
+         comparison logic must be format-agnostic.
+   - Flexible column matching (case-insensitive, tolerate header variants like 'User Name' vs 
+     'BNAME' vs 'Username'), applied identically regardless of source format.
+   - Unsupported file type → inline error: "Unsupported file type. Please upload a .csv, .xlsx, 
+     or .xls file."
+
+6. "Run CM-04 Test" button (disabled until both files are uploaded and both months are selected)
+
+7. VALIDATION LOGIC (implement exactly, in this order)
+   a. Parse both uploaded files into DEV list and PRD list.
+   b. Filter Users: retain only rows where USER TYPE is 'A' or 'S' (case-insensitive); drop all others.
+   c. Validate Active Access: for each remaining row, keep it only if:
+        - VALID TO is blank/null, OR
+        - VALID TO falls within [From Month start date, To Month end date] inclusive, OR
+        - VALID TO is after To Month end date (still active through the audit period)
+      i.e. exclude only users whose access clearly expired before the audit period's From Month.
+   d. Compare Lists: take filtered/active DEV usernames and filtered/active PRD usernames; compute 
+      the intersection (case-insensitive match on username/BNAME; normalize to uppercase first).
+   e. Any username present in both active lists is an EXCEPTION.
+   f. Dedupe: if a username appears multiple times in one file (e.g. multiple roles), count it once 
+      per environment.
+
+8. OUTPUT AREA (after Run)
+   - Summary strip: "Users Reviewed (DEV): X | Users Reviewed (PRD): Y | Active Developers (DEV): A 
+     | Active Developers (PRD): B | Exceptions Found: N"
+   - Result chip/banner:
+       • PASS chip (green) — "CM-04 executed successfully — No common active developer users found 
+         between DEV and PRD" if N = 0
+       • FAIL chip (red) — "CM-04 executed — N exception(s) identified" if N > 0
+   - Exceptions table (only rendered if N > 0), columns:
+       USERNAME | USER TYPE (DEV) | VALID TO (DEV) | USER TYPE (PRD) | VALID TO (PRD) | STATUS = "Exception"
+   - Missing mandatory column in either file → warning banner above results: "One or more mandatory 
+     columns are missing in [DEV/PRD] extract: <list>" — block execution until resolved.
+
+9. AUDIT TRAIL LOGGING (on every run, success or exception)
+   Log: Control ID (CM-04), Control Name, Auditor/User Name (existing global field), Run timestamp, 
+   DEV file name, PRD file name, From Month, To Month, Users Reviewed (DEV/PRD), Active Developers 
+   (DEV/PRD), Exceptions Found, and the exception list itself.
+
+10. EXPORT
+    - "Export CM-04 Audit Trail (Excel/CSV)" — same pattern as other controls (auto-downloads).
+    - Includes: run metadata (auditor, timestamp, audit period), full exception table, counts summary.
+
+EDGE CASES
+- Empty file upload → inline error, don't crash.
+- Username casing mismatches → normalize to uppercase before comparing.
+- Duplicate rows for same user in one file → dedupe before building active list.
+- USER TYPE column missing entirely → validation error, not silent skip.
+
+STYLING — Grant Thornton–inspired design system
+
+Colors:
+- Primary brand (buttons, active nav, primary CTAs): #4F2D7F
+  - Hover: #41256A | Pressed: #2B144D
+- Primary light / AI accents: #A06DFF (light), #CDB4FF (accent), AI Processing #6D28D9, AI Background #F5F3FF
+- Background: #F8F9FC | Card background: #FFFFFF | Table header: #F4F5F7
+- Borders: #E6E8EC | Dividers: #D9DCE3
+- Text: primary #1F2937, secondary #6B7280, placeholder #9CA3AF, disabled #C4C4C4
+
+Status colors (reserved for the result banner, warning banner, and exceptions table only):
+- Success (Pass) → text/icon #16A34A, background #ECFDF3, border #BBF7D0
+- Warning (missing-column banner) → text/icon #D97706, background #FFF7ED, border #FED7AA
+- Error / Exception rows → text/icon #DC2626, background #FEF2F2, border #FECACA
+- Informational helper text (audit period note, mandatory columns panel) → text #0284C7, 
+  background #F0F9FF, border #BAE6FD
+
+Audit Chips:
+- PASS chip → background #ECFDF3, text #16A34A
+- FAIL chip → background #FEF2F2, text #DC2626
+
+Buttons:
+- Primary ("Run CM-04 Test", "Export Audit Trail") → background #4F2D7F, text #FFFFFF, 
+  hover #41256A, pressed #2B144D
+- Secondary (e.g. "Clear Files") → white background, #4F2D7F border/text, hover #F5F3FF
+- Ghost (tertiary links) → #4F2D7F text, hover background #F8F9FC
+- Disabled "Run CM-04 Test" → text #C4C4C4, no fill
+
+Cards: background #FFFFFF, border #E6E8EC, radius 12px, shadow 0px 2px 10px rgba(15,23,42,0.06)
+
+Typography: Inter throughout.
+- Card title → H4, 20px/600
+- Section labels ("Audit Steps", "Mandatory Columns") → Body Large, 16px/500
+- Body copy (objective, helper notes) → Body, 14px/400
+- Column headers, file metadata, chip labels → Caption, 12px/400
+
+Layout & spacing:
+- 8px grid (4/8/12/16/24/32/40/48/64px) for section padding/margins
+- Inputs/buttons: 8px border radius (distinct from 12px card radius)
+- Flat aesthetic — no gradients, no glassmorphism, shadow limited to card-level shadow above
+- Transitions 150–200ms on hover/state changes
+- Overall feel reference: Microsoft Purview / Azure Portal / SAP Fiori / Atlassian Admin
+
+Sidebar/nav (if this screen sits inside the existing app shell):
+- Background #FFFFFF, selected menu item background #F5F3FF with left border #4F2D7F and text 
+  #4F2D7F, hover #F8F9FC
